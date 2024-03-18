@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <!-- <a href="#" class="nav-logo">WebDev.</a> -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="Logo Image">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <button class="login-button" onclick="window.location.href='login.html'">Login</button>
+                </li>
+                <li class="nav-item">
+                    <button class="join-button" onclick="window.location.href='signup.html'">SignUp</button>
+                </li>
+                <li class="nav-item">
+                    <div class="search-box">
+                        <button class="btn-search"><i class="fas fa-search"></i></button>
+                        <input type="text" class="input-search" placeholder="Type to Search">
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- partial:index.partial.html -->
+    <div class="signup-form">
+        <form>
+            <h1>Sign Up</h1>
+            <div class="content">
+                <div class="input-field">
+                    <input type="text" placeholder="Name" autocomplete="nope" required>
+                </div>
+                <div class="input-field">
+                    <input type="email" placeholder="Email" autocomplete="nope" required>
+                </div>
+                
+                <div class="input-field">
+                    <input type="password" placeholder="Password" autocomplete="new-password" required>
+                </div>
+            </div>
+            
+            <div class="action">
+                <button>Sign Up</button>
+            </div>
+        </form>
+    </div>
+    </body>
+    
+<script src="index.js"></script>
+</html>

@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header{
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1.5rem;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
+.hero{
+    background-image: url('ngo.jpg');
+    background-position: center;
+    background-size: 100% 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+
+.content h1{
+    position: relative;
+    z-index: 1; /* Ensure content is above the background */
+    font-size: 3rem;
+    text-align: center;
+    padding: 1rem 1rem;
+    font-weight: 700;
+    color: black;    
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .content h1 {
+        font-size: 1.5rem; /* Further adjust font size for smaller screens */
+    }
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 3rem;
+}
+
+.nav-link{
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #475569;
+}
+
+.nav-link:hover{
+    color: #28CED6;
+}
+
+/*Styling logo*/
+.logo{
+    padding:1vh 1vw;
+    text-align: center;
+}
+.logo img {
+    height: 5rem;
+    width: 5rem;
+}
+
+/*Styling Buttons*/
+.login-button{
+    background-color: transparent;
+    border: 1.2px solid black;
+    border-radius: 0.5em;
+    padding: 0.3rem 1rem;
+    /* margin-left: 12vw; */
+    font-size: 1.2rem;
+    color: black;
+    cursor: pointer;
+
+}
+
+.login-button:hover {
+    color: white;
+    background-color: black;
+    border: 2px solid #28CED6;
+    transition: all ease-in-out 350ms;
+}
+
+.join-button{
+    color: #131418;
+    background-color: #28CED6;
+    border: 1.5px solid #28CED6;
+    border-radius: 0.5em;
+    padding: 0.3rem 1rem;
+    margin-left: -2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.join-button:hover {
+    color: white;
+    background-color: black;
+    border: 2px solid #28CED6;
+    transition: all ease-in-out 350ms;
+}
+
+.search-box{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+}
+
+.input-search{
+    height: 40px;
+    width: 220px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    outline: none;
+    transition: all .5s ease-in-out;
+    background-color: transparent;
+    padding-right: 50px;
+    color:#fff;
+}
+
+.input-search::placeholder{
+    /* color:rgba(219, 219, 219, 0.934); */
+    color: black;
+    font-size: 15px;
+    opacity: 0.7;
+    letter-spacing: 2px;
+    font-weight:300;
+}
+
+.btn-search{
+    width: 40px;
+    height: 40px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    color: black;
+    background-color:transparent;
+    pointer-events: painted;  
+}
+
+.btn-search:focus ~ .input-search{
+    width: 200px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(0, 0, 0, 0.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+.input-search:focus{
+    width: 240px;
+    border-radius: 0px;
+    color: black;
+    background-color: transparent;
+    border-bottom:1px solid rgba(0, 0, 0, 0.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+/* ----------------------------------- */
+
+@media only screen and (max-width: 768px) {
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 1.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .join-button{
+        margin-left: 0rem;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        -webkit-transform: translateY(8px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        -webkit-transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
