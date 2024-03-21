@@ -1,3 +1,5 @@
+
+// Hamburger Menu code
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
@@ -8,6 +10,7 @@ function mobileMenu() {
     navMenu.classList.toggle("active");
 }
 
+//Login Functionality
 document.addEventListener('DOMContentLoaded', function() {
   const signInForm = document.getElementById('loginForm');
   const emailInput = document.getElementById('email');
@@ -32,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // You can replace this with your server-side validation logic
     const hardcodedUsers = {
-      "abc@abc.com": "123456",
+      "Rohit@abc.com": "123456",
       "test@test.ca": "testing"
     };
     const enteredEmail = emailInput.value;
@@ -68,3 +71,69 @@ document.addEventListener('DOMContentLoaded', function() {
     return password.length >= 6;
   }
 });
+
+//Signup Validation
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('signupForm');
+  const errorMessage = document.getElementById('errorMessage');
+
+  form.addEventListener('submit', function(event) {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+
+      // Basic name validation (not empty)
+      if (name === '') {
+          errorMessage.textContent = 'Please enter your name.'
+          event.preventDefault(); // Prevent form submission
+          return;
+      }
+
+      // Basic email validation (using HTML5 built-in validation)
+      if (!form.checkValidity()) {
+          // The email input will be validated automatically
+          event.preventDefault(); // Prevent form submission
+          return;
+      }
+
+      // Basic password validation (not empty)
+      if (password === '') {
+        errorMessage.textContent = 'Please enter your password.'
+        event.preventDefault(); // Prevent form submission
+          return;
+      }
+      if (password.length < 6) { // Adjust the minimum length as needed
+        errorMessage.textContent = 'Password must be at least 6 characters long.'
+        event.preventDefault(); // Prevent form submission
+        return;
+    }
+    showSuccessMessage();
+      errorMessage.textContent= '';
+        resetForm();
+        redirectToLoginPage();
+        event.preventDefault();
+  });
+
+  function showSuccessMessage() {
+    const successMessage = document.createElement('div');
+    successMessage.textContent = 'Sign up successful, redirecting to Login!';
+    successMessage.style.color = 'green';
+    form.parentNode.insertBefore(successMessage, form.nextSibling);
+  }
+
+  function resetForm() {
+    form.reset();
+  }
+  function redirectToLoginPage() {
+    setTimeout(function() {
+        window.location.href = 'login.html';
+    }, 5000); // 5000 milliseconds = 5 seconds
+}
+});
+
+function addToCart() {
+  var quantityElement = document.getElementById("quantity");
+  var currentQuantity = parseInt(quantityElement.innerText);
+  var newQuantity = currentQuantity + 1;
+  quantityElement.innerText = newQuantity;
+}
