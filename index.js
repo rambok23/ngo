@@ -1,4 +1,3 @@
-
 // Hamburger Menu code
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
@@ -131,9 +130,18 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 });
 
-function addToCart() {
-  var quantityElement = document.getElementById("quantity");
+function addToCart(cardId) {
+  var quantityElement = document.getElementById("quantity" + cardId);
   var currentQuantity = parseInt(quantityElement.innerText);
   var newQuantity = currentQuantity + 1;
   quantityElement.innerText = newQuantity;
+  // Show Buy Now button
+  var buyNowBtn = document.querySelector(".buy-now-btn");
+  buyNowBtn.style.display = "block";
 }
+
+// function buyNow(cardId) {
+//   // Handle Buy Now button click
+//   console.log("Buy Now button clicked for card " + cardId);
+//   // Add your logic here for what happens when Buy Now is clicked
+// }
