@@ -1,0 +1,98 @@
+.thankyouhero{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.tyimage {
+    flex: 1; /* Takes up remaining space */
+    text-align: center; /* Center the image horizontally */
+}
+.tyimage img{
+    max-width: 100%;
+    margin-bottom: -0.3rem;
+}
+
+.happyfaces{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.happyfaces h1{
+    padding: 0.5rem;
+    color: white;
+    font-size: 3rem;
+    background-color: #28CED6;
+    margin-bottom: 0.2rem;
+
+}
+
+.happyimages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
+    grid-gap: 5px; /* Gap between images */
+    justify-content: center; /* Center-align images horizontally */
+    align-items: center; /* Center-align images vertically */
+}
+
+.happyimages img {
+    width: 100%; /* Ensure images don't exceed container width */
+    height: 200px; /* Maintain aspect ratio */
+    object-fit: cover;
+}
+
+.tytext {
+    flex: 1; /* Takes up remaining space */
+    /* padding: 0 20px; Add padding to the text for spacing */
+}
+
+.tytext h1{
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+.tytext p{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .tytext h1{
+        font-size: 4rem;
+    }
+    
+    .tytext p{
+        font-size: 1rem;
+    }
+}
+@media (max-width: 576px) {
+    .tytext h1{
+        font-size: 2rem;
+    }
+    
+    .tytext p{
+        font-size: 0.9rem;
+    }
+
+    .happyfaces{
+        margin-top: 0.5rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .happyfaces h1{
+        padding: 0.3rem;
+        font-size: 2rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .happyimages {
+        grid-gap: 3px; /* Gap between images */
+    }
+    
+
+    .happyimages img {
+        height: 150px; /* Maintain aspect ratio */
+        object-fit:cover;
+    }
+}

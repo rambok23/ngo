@@ -130,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 });
 
+//AddToCart Functionality
 function addToCart(cardId) {
   var quantityElement = document.getElementById("quantity" + cardId);
   var currentQuantity = parseInt(quantityElement.innerText);
@@ -145,3 +146,60 @@ function addToCart(cardId) {
 //   console.log("Buy Now button clicked for card " + cardId);
 //   // Add your logic here for what happens when Buy Now is clicked
 // }
+
+
+//PaymentForm Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('donationform');
+
+  form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting by default
+
+      // Perform validation for each input field
+      const firstName = document.getElementById('firstName').value.trim();
+      const lastName = document.getElementById('lastName').value.trim();
+      const zip = document.getElementById('zip').value.trim();
+      const nameOnCard = document.getElementById('nameOnCard').value.trim();
+      const cardNum = document.getElementById('cardNum').value.trim();
+      const ccv = document.getElementById('ccv').value.trim();
+
+      // Validation checks for each input field
+      if (!/^[a-zA-Z\-']+$/i.test(firstName)) {
+          alert('First name should only contain letters, hyphens, and apostrophes.');
+          return;
+      }
+
+      if (!/^[a-zA-Z\-']+$/i.test(lastName)) {
+          alert('Last name should only contain letters, hyphens, and apostrophes.');
+          return;
+      }
+
+      if (!/^\d{5}$/.test(zip)) {
+          alert('Please enter a valid 5-digit zip code.');
+          return;
+      }
+
+      if (!/^[a-zA-Z\s]+$/i.test(nameOnCard)) {
+          alert('Name on card should only contain letters and spaces.');
+          return;
+      }
+
+      if (!/^\d{16}$/.test(cardNum)) {
+          alert('Please enter a valid 16-digit card number.');
+          return;
+      }
+
+      if (!/^\d{3}$/.test(ccv)) {
+          alert('Please enter a valid 3-digit CCV.');
+          return;
+      }
+
+      // If all validations pass, submit the form
+      alert('Form submitted successfully!');
+      form.reset(); // Reset the form
+      window.location.href="thankyou.html";
+  });
+
+  // Additional event listeners for input fields if needed
+  // You can add more validation checks here
+});

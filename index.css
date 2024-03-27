@@ -23,6 +23,7 @@ a {
 
 .header{
     border-bottom: 1px solid #E2E8F0;
+    overflow: hidden;
 }
 
 .navbar {
@@ -78,12 +79,23 @@ a {
 
 .ourproducts{
     margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .ourproducts h1{
     text-align: center;
     font-size: 3rem;
 }
+
+.title-and-search {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Align items horizontally */
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
 
 .products{
     display: flex;
@@ -149,7 +161,7 @@ a {
 
 
 /* Media queries for responsiveness */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .heroheading h1 {
         font-size: 1.5rem; /* Adjust font size for smaller screens */
     }
@@ -171,14 +183,17 @@ a {
 }
 
 /* Make the product boxes responsive */
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
     .card {
         flex-basis: calc(50% - 20px);
     }
 }
 
-@media (max-width: 576px) {
-    
+@media screen and (max-width: 576px) {
+    .logo img {
+        height: 5rem;
+        width: 15rem!important;
+    }
     .heroheading{
         position: absolute;
         top: 10px;
@@ -197,6 +212,17 @@ a {
     }
     .buy-now-btn{
         width: 30%;
+    }
+    .title-and-search {
+        display: block;
+        margin: auto;
+    }
+    
+    .ourproducts h1{
+        font-size: 2rem;
+    }
+    .search-box{
+        padding-top: 1rem;
     }
 }
 
