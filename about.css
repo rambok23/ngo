@@ -1,98 +1,211 @@
-.about-us{
-    height: 100vh;
-    width: 100%;
-    padding: 5px 0;
-}
-
-.pic{
-    height: auto;
-    width: 400px;
-}
-
-.about{
-    width: 1130px;
-    max-width: 85%;
+/* Apply styles to the about-us section */
+.about-us {
+    max-width: 800px;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    text-align: center;
 }
 
-.ourmission{
-    width: 1130px;
-    max-width: 85%;
-    margin: 0 auto;
+/* Style the heading */
+.about-us h1 {
+    font-size: 4rem;
+    color: #000;
+    margin-bottom: 20px;
 }
 
-.ourmission h1{
-    font-size: 5rem;
-    font-weight: 600;
-}
-
-.text{
-    width: 550px;
-}
-
-.text h1{
-    font-size: 5rem;
-    font-weight: 600;
-    /* margin-bottom: 10px; */
-}
-
-.text h5{
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 5px;
-}
-
-span{
-    color: #28CED6;
-}
-
-.text p{
+/* Style the paragraph */
+.about-us p {
+    text-align: left;
     font-size: 18px;
-    line-height: 25px;
-    letter-spacing: 1px;
+    color: #000;
 }
 
-.text{
-    width: 550px;
+.missiontext{
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 1.5rem;
 }
 
 .missiontext h1{
-    font-size: 5rem;
-    font-weight: 600;
-    /* margin-bottom: 10px; */
+    font-size: 2rem;
+    text-align: center;
+    color: #000;
+    margin-bottom: 20px;
 }
 
-.missiontext h5{
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 5px;
-}
-
-.missiontext p{
+.missiontext p {
+    text-align: left;
     font-size: 18px;
-    line-height: 25px;
-    letter-spacing: 1px;
 }
 
-.data{
-    margin-top: 30px;
+.howework{
+    background-color:rgba(224, 224, 224, 0.66);
+    text-align: center;
 }
 
-.hire{
-    font-size: 18px;
-    background: #28CED6;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    padding: 8px 25px;
-    border-radius: 6px;
-    transition: 0.5s;
+.workwedo{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.5rem;
 }
 
-.hire:hover{
-    background: #000;
-    border: 1px solid #4070f4;
+.workwedo h1{
+    margin-bottom: 0.5rem;
+}
+
+.sections-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Distribute sections evenly */
+    align-items: center;
+    flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+
+}
+
+.section {
+    flex-basis: 30%; /* Each section takes up 30% of the container width */
+    text-align: center;
+    margin: 20px;
+}
+.section img {
+    width: 100%;
+    height: auto;
+    max-width: 150px; /* Set a max-width for image */
+    display: block; /* Remove extra space below the image */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.section h4,
+.section p {
+    margin: 10px 0;
+}
+
+.section p {
+    font-size: 0.8rem;
+}
+
+.maindiv{
+    display: flex;
+}
+
+.maindiv > div {
+    flex: 1;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: stretch;
+
+}
+
+.firstabout img, .thirdabout img {
+    max-width: 100%;
+    height: auto;
+
+}
+
+.secondabout{
+    flex: 2;
+    color: black;
+    background-color: #2BCED6;
+    text-align: center;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondabout h1{
+    line-height: 40px;
+    margin-bottom: 1rem;
+}
+
+.secondabout p{
+    margin-bottom: 1rem;
+}
+
+
+.secondabout > * {
+    flex-grow: 1;
+}
+
+.donatebutton{
+    display: inline-block;
+    color: black;
+    border: 2px solid black;
+    line-height: 44px !important;
+    background-color: white;
+    border-radius: 4px;
+    transition: color, opacity .15s linear;
+    box-sizing: content-box;
+    width: 50%;
+    margin: 0 auto; /* Center the button horizontally */
+}
+
+.donatebutton:hover{
+    color: white;
+    background-color: #000;
+    transition: all 0.4s ease-in-out;
+}
+
+.thirdabout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Revert changes for larger screens */
+@media screen and (min-width: 1024px) {
+    .sections-container {
+        flex-wrap: nowrap; /* Prevent sections from wrapping */
+    }
+    .section {
+        flex-basis: auto; /* Revert to original flex-basis */
+    }
+}
+
+@media screen and (max-width: 768px){
+    .about-us, .missiontext {
+        max-width: 500px;
+    }
+    .about-us h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+    }
+    
+    /* Style the paragraph */
+    .about-us p, .missiontext p {
+        font-size: 16px;
+    }
+    .maindiv {
+        flex-direction: column;
+    }
+    .secondabout{
+        padding: 30px;
+    }
+    .sections-container {
+        flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+    }
+    .section {
+        flex-basis: 100%; /* Make each section take full width on smaller screens */
+    }
+}
+
+@media screen and (max-width: 576px){
+    .about-us,.missiontext {
+        max-width: 400px;
+    }
+    .about-us h1, .missiontext h1{
+        font-size: 2rem;
+        margin-bottom: 5px;
+    }
+    /* Style the paragraph */
+    .about-us p, .missiontext p {
+        font-size: 14px;
+        padding: 0.5rem;
+    }
+    .missiontext{
+        padding-bottom: 1rem;
+    }
 }
