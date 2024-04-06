@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact We Care</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/media/wecare.ico">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    
+    <!-- Google Maps Api Link -->
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPWyI3gxIPkKRwaBqxIOb-jZ5iJSdVhxk&libraries=places&loading=async"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/fontawesome.css" integrity="sha384-jLuaxTTBR42U2qJ/pm4JRouHkEDHkVqH0T1nyQXn1mZ7Snycpf6Rl25VBNthU4z0" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <!-- C-share Plugin file link -->
+    <script src="/js/c-share.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var lambtonCollege = {lat: 43.7731, lng: -79.3354};
+            var mapOptions = {
+                center: lambtonCollege, // Lambton College coordinates in Toronto
+                zoom: 16,
+                mapTypeId: google.maps.MapTypeId.ROADMAP, // Set map type
+                disableDefaultUI: false, // Enable default UI controls
+                zoomControl: true // Enable zoom control
+            };
+    
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    
+            // Optional: Add error handling
+            google.maps.event.addListenerOnce(map, 'tilesloaded', function(){
+                console.log('Map loaded successfully');
+            });
+    
+            google.maps.event.addListener(map, 'error', function(event){
+                console.log('Map error:', event.message);
+            });
+            
+            // Add marker
+            var marker = new google.maps.Marker({
+                position: lambtonCollege,
+                map: map,
+                title: 'Lambton College' // Optional title for the marker
+            });
+        });
+    </script>
+
+</head>
+
+<body data-spy="scroll" data-target="#navbar-example" data-offset="50">
+    <header class="header">
+        <nav class="navbar">
+            <!-- <a href="#" class="nav-logo">WebDev.</a> -->
+            <div class="logo">
+                <a href="/index.html">
+                    <img src="/media/wecare.png" alt="Logo Image">
+                </a>
+                </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/html/services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/html/about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/html/contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <button class="login-button" id="loginButton" onclick="window.location.href='/html/login.html'">Login</button>
+                </li>
+                <li class="nav-item">
+                    <button class="join-button" onclick="window.location.href='/html/signup.html'">SignUp</button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contact Banner -->
+    <div class="contactbanner">
+        <div class="conform">
+            <h1>
+                Give today and join our community
+                of world changers
+            </h1>
+        </div>
+        <div class="bab"></div>
+    </div>
+
+    <!-- OUR VOLUNTEERS -->
+    <div class="ourvolunteers">
+        <h1>Our volunteers</h1>
+        <div class="volunteers">
+
+            <div class="volcard">
+                <img src="/media/lamb.jpg" alt="Food Package" style="width:50%">
+                <h2>Rohit Katkar</h2>
+                <p class="volpost">Founder</p>
+                <p><div class="shareBlock"></div></p>
+            </div>
+            <div class="volcard">
+                <img src="/media/lamb.jpg" alt="Clothing Package" style="width:50%">
+                <h2>Sumit Sohal</h2>
+                <p class="volpost">Operation Manager</p>
+                <p><div class="shareBlock"></div></p>
+            </div>
+            <div class="volcard">
+                <img src="/media/lamb.jpg" alt="Education Package" style="width:50%">
+                <h2>Sana & Saba Shaikh</h2>
+                <p class="volpost">Social Media Manager</p>
+                <p><div class="shareBlock"></div></p>
+            </div>
+            <div class="volcard">
+                <img src="/media/lamb.jpg" alt="Healthcare Package" style="width:50%">
+                <h2>Jassi Chahal</h2>
+                <p class="volpost">Helper</p>
+                <p><div class="shareBlock"></div></p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="formlocation">
+        <div class="contactform">
+            <div class="container">
+                <div class="content">
+                    <div class="left-side">
+                        <div class="address details">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="topic">Address</div>
+                            <div class="text-one">Toronto, CA</div>
+                            <div class="Text-Two">North York</div>
+                        </div>
+                    
+                        <div class="phone details">
+                            <i class="fas fa-phone-alt"></i>
+                            <div class="topic">Phone</div>
+                            <div class="text-one"><a href="tel:+1 398-399-2020"> +1 398-399-2020 </a></div>
+                        </div>
+                        
+                        <div class="email details">
+                            <i class="fas fa-envelope"></i>
+                            <div class="topic">Email</div>
+                            <div class="text-one"><a href="mailto:contact@wecare.com">contact@wecare.com</a></div>
+                        </div>
+                    </div>
+
+                    <div class="right-side">
+                        <div class="topic-text">Send us a message</div>
+                        <p>Have Questions or Need Assistance? Reach Out to Us!</p>
+                        <form action="#" id="contactForm">
+                            <div class="input-box">
+                                <input type="text" id="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="input-box">
+                                <input type="text" id="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="input-box message-box">
+                                <textarea placeholder="Tell us about how you want to make a difference" id="message" required></textarea>
+                            </div>
+                            <div class="button">
+                                <input type="submit" value="Send Now" >
+                                <div class="error-message" id="nameError"></div>
+                                <div class="error-message" id="emailError"></div>
+                                <div class="error-message" id="messageError"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="conids"></div>
+    </div>
+
+    
+    <!-- Google Maps -->
+    <div id="map" style="height:300px;"></div>
+
+    <!-- FOOTER -->
+    <footer>
+        <nav>
+            <a href="/index.html">Home</a>|
+            <a href="/html/services.html">Services</a>|
+            <a href="/html/about.html">About</a>|
+            <a href="/html/contact.html">Contact</a>
+        </nav>
+
+        <div class="foot">
+            <p class="copyrightext">Copyright &copy; We Care. All Rights Reserved.</p>
+            <p class="groupcredit">Website Design and Development by Group-6</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Change the text of h1 element to "Welcome" on index.html
+            // Get the username from URL parameter
+            const params = new URLSearchParams(window.location.search);
+            const username = params.get('username');
+            if(username){
+                document.getElementById('testing').textContent = `Welcome, ${username}`;
+                document.getElementById('loginButton').style.display = 'none';
+
+            }
+        });
+    </script>
+    <script>
+        $('.shareBlock').cShare({
+            showButtons: [
+                'fb',
+                'line',
+                'tumblr'
+            ]
+        });
+        $('#shareBlock').cShare({
+            data: {
+                fb: {
+                fa: 'fab fa-facebook-f',
+                name: 'Fb',
+                href: (url) => {
+                    return `https://www.facebook.com/sharer.php?u=${url}`
+                },
+                show: true
+                },
+                line: {
+                fa: 'fab fa-line fa-2x',
+                name: 'Line',
+                href: (url) => {
+                    return `https://social-plugins.line.me/lineit/share?url=${url}`
+                },
+                show: true,
+                hideWrapper: true
+                },
+                plurk: {
+                fa: 'fa-plurk',
+                name: 'Plurk',
+                href: (url, description) => {
+                    return `http://www.plurk.com/?qualifier=shares&status=${description} ${url}`
+                },
+                show: false
+                },
+                weibo: {
+                fa: 'fab fa-weibo',
+                name: '微博',
+                href: (url, description) => {
+                    return `http://service.weibo.com/share/share.php?title=${description}&url=${url}`
+                },
+                show: false
+                },
+                twitter: {
+                fa: 'fab fa-twitter',
+                name: 'Twitter',
+                href: (url, description) => {
+                    return `https://twitter.com/intent/tweet?original_referer=${url}&url=${url}&text=${description}`
+                },
+                show: false
+                },
+                tumblr: {
+                fa: 'fab fa-tumblr',
+                name: 'Tumblr',
+                href: (url, description) => {
+                    return `http://www.tumblr.com/share/link?name=${description} ${url}&url=${url}`
+                },
+                show: true
+                },
+                email: {
+                fa: 'fas fa-envelope',
+                name: 'E-mail',
+                href: (url, description) => {
+                    return `mailto:?subject=${description}&body=${description} ${url}`
+                },
+                show: false
+                }
+            },
+        });
+    </script>
+</body>
+
+<script src="/js/index.js"></script>
+</html>

@@ -3,11 +3,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LogIn</title>
-    <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/index.css">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="/media/wecare.ico">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -15,35 +18,26 @@
         <nav class="navbar">
             <!-- <a href="#" class="nav-logo">WebDev.</a> -->
             <div class="logo">
-                <a href="index.html">
-                    <img src="wecare.png" alt="Logo Image">
+                <a href="/index.html">
+                    <img src="/media/wecare.png" alt="Logo Image">
                 </a>
                 </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Products</a>
+                    <a href="/html/services.html" class="nav-link">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Blog</a>
+                    <a href="/html/about.html" class="nav-link">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">About</a>
+                    <a href="/html/contact.html" class="nav-link">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Contact</a>
+                    <button class="login-button" id="loginButton" onclick="window.location.href='/html/login.html'">Login</button>
                 </li>
                 <li class="nav-item">
-                    <button class="login-button" id="loginButton" onclick="window.location.href='login.html'">Login</button>
+                    <button class="join-button" onclick="window.location.href='/html/signup.html'">SignUp</button>
                 </li>
-                <li class="nav-item">
-                    <button class="join-button" onclick="window.location.href='signup.html'">SignUp</button>
-                </li>
-                <!-- <li class="nav-item">
-                    <div class="search-box">
-                        <button class="btn-search"><i class="fas fa-search"></i></button>
-                        <input type="text" class="input-search" placeholder="Type to Search">
-                    </div>
-                </li> -->
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -75,12 +69,12 @@
     </div>
 
     <!-- FOOTER -->
-    <!-- Footer -->
     <footer>
         <nav>
-            <a href="index.html">Home</a>|
-            <a href="about.html">About</a>|
-            <a href="contact.html">Contact</a>
+            <a href="/index.html">Home</a>|
+            <a href="/html/services.html">Services</a>|
+            <a href="/html/about.html">About</a>|
+            <a href="/html/contact.html">Contact</a>
         </nav>
 
         <div class="foot">
@@ -90,5 +84,5 @@
     </footer>
 
 </body>    
-<script src="index.js"></script>
+<script src="/js/index.js"></script>
 </html>

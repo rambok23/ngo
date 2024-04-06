@@ -38,7 +38,8 @@
 }
 
 .howework{
-    background-color:rgba(224, 224, 224, 0.66);
+    /* background-color:rgba(224, 224, 224, 0.66); */
+    background-color: #f0f0f0;
     text-align: center;
 }
 

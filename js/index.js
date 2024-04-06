@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (hardcodedUsers.hasOwnProperty(enteredEmail)) {
       if (hardcodedUsers[enteredEmail] === enteredPassword) {
         const username = enteredEmail.split('@')[0]; // Extract username from email
-        window.location.href = `index.html?username=${username}`;
+        window.location.href = `../index.html?username=${username}`;
 
         // window.location.href = 'index.html'; // Redirect to index.html
         console.log("Login Successful");
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   function redirectToLoginPage() {
     setTimeout(function() {
-        window.location.href = 'login.html';
+        window.location.href = '/html/login.html';
     }, 5000); // 5000 milliseconds = 5 seconds
 }
 });
@@ -197,9 +197,74 @@ document.addEventListener('DOMContentLoaded', function() {
       // If all validations pass, submit the form
       alert('Form submitted successfully!');
       form.reset(); // Reset the form
-      window.location.href="thankyou.html";
+      window.location.href="/html/thankyou.html";
   });
 
   // Additional event listeners for input fields if needed
   // You can add more validation checks here
 });
+
+$(document).ready(function() {
+  $('[data-fancybox="images"]').fancybox({
+      loop: true, // Enable looping of images
+      buttons: ["zoom", "slideShow", "thumbs", "close"], // Show additional buttons
+      animationEffect: "fade", // Set animation effect
+      transitionEffect: "slide", // Set transition effect
+      transitionDuration: 800 // Set transition duration in milliseconds
+  });
+});
+
+// Contact us validation
+// validation.js
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  // Prevent the form from submitting if validation fails
+  event.preventDefault();
+
+  // Validate name field
+  var nameInput = document.getElementById("name");
+  var nameError = document.getElementById("nameError");
+  if (nameInput.value.trim() === "") {
+      nameError.textContent = "Please enter your name";
+      nameInput.focus();
+      return false;
+  } else {
+      nameError.textContent = "";
+  }
+
+  // Validate email field
+  var emailInput = document.getElementById("email");
+  var emailError = document.getElementById("emailError");
+  if (emailInput.value.trim() === "") {
+      emailError.textContent = "Please enter your email";
+      emailInput.focus();
+      return false;
+  } else if (!validateEmail(emailInput.value.trim())) {
+      emailError.textContent = "Please enter a valid email address";
+      emailInput.focus();
+      return false;
+  } else {
+      emailError.textContent = "";
+  }
+
+  // Validate message field
+  var messageInput = document.getElementById("message");
+  var messageError = document.getElementById("messageError");
+  if (messageInput.value.trim() === "") {
+      messageError.textContent = "Please enter your message";
+      messageInput.focus();
+      return false;
+  } else {
+      messageError.textContent = "";
+  }
+
+  // If all validations pass, submit the form
+  alert("Message has been received!"); // Display alert message
+  this.submit();
+});
+
+// Function to validate email format
+function validateEmail(email) {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(email);
+}
