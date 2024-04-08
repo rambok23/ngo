@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    // You can replace this with your server-side validation logic
+    //Hardcoded users with password
     const hardcodedUsers = {
       "Rohit@abc.com": "123456",
       "test@test.ca": "testing"
@@ -81,21 +81,21 @@ document.addEventListener('DOMContentLoaded', function() {
       const email = document.getElementById('email').value.trim();
       const password = document.getElementById('password').value;
 
-      // Basic name validation (not empty)
+      // Name validation (not empty)
       if (name === '') {
           errorMessage.textContent = 'Please enter your name.'
           event.preventDefault(); // Prevent form submission
           return;
       }
 
-      // Basic email validation (using HTML5 built-in validation)
+      // Email validation
       if (!form.checkValidity()) {
           // The email input will be validated automatically
           event.preventDefault(); // Prevent form submission
           return;
       }
 
-      // Basic password validation (not empty)
+      // Password validation (not empty)
       if (password === '') {
         errorMessage.textContent = 'Please enter your password.'
         event.preventDefault(); // Prevent form submission
@@ -174,10 +174,11 @@ document.addEventListener('DOMContentLoaded', function() {
           return;
       }
 
-      if (!/^\d{5}$/.test(zip)) {
-          alert('Please enter a valid 5-digit zip code.');
-          return;
-      }
+      if (!/^[a-zA-Z0-9]{6}$/.test(zip)) {
+        alert('Please enter a valid 6-character alphanumeric zip code.');
+        return;
+    }
+    
 
       if (!/^[a-zA-Z\s]+$/i.test(nameOnCard)) {
           alert('Name on card should only contain letters and spaces.');
@@ -194,16 +195,15 @@ document.addEventListener('DOMContentLoaded', function() {
           return;
       }
 
-      // If all validations pass, submit the form
       alert('Form submitted successfully!');
       form.reset(); // Reset the form
       window.location.href="/html/thankyou.html";
   });
 
-  // Additional event listeners for input fields if needed
-  // You can add more validation checks here
 });
 
+
+//Fancybox plugin
 $(document).ready(function() {
   $('[data-fancybox="images"]').fancybox({
       loop: true, // Enable looping of images
@@ -215,10 +215,7 @@ $(document).ready(function() {
 });
 
 // Contact us validation
-// validation.js
-
 document.getElementById("contactForm").addEventListener("submit", function(event) {
-  // Prevent the form from submitting if validation fails
   event.preventDefault();
 
   // Validate name field
